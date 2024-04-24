@@ -18,7 +18,7 @@ from collections import OrderedDict,namedtuple
 providers = ['CUDAExecutionProvider', 'CPUExecutionProvider'] if cuda else ['CPUExecutionProvider'] #['AzureExecutionProvider', 'CPUExecutionProvider'] if cuda else ['CPUExecutionProvider']
 session = ort.InferenceSession(w, providers=providers)
 
-# TensorFlow 1.x 호환 가능하도록 수정정
+# TensorFlow 1.x 호환 가능하도록 수정
 tf.compat.v1.disable_eager_execution()
 with tf.compat.v1.Session() as sess:
     x = tf.compat.v1.placeholder(tf.float32, [2])
